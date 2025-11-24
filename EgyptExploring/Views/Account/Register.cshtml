@@ -1,0 +1,74 @@
+﻿@model EgyptExploring.ViewModel.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_AuthLayout";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/authstyle.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="~/js/theme.js" asp-append-version="true"></script>
+    <script src="~/js/signupscript.js" asp-append-version="true"></script>
+}
+
+<div class="auth-container">
+    <div class="auth-box">
+        <img src="~/images/image.png" alt="Triplico Logo" class="logo" />
+        <h2>Create Account</h2>
+
+        <div asp-validation-summary="All" class="text-danger" style="margin-bottom:10px;"></div>
+
+        <form asp-action="Register" asp-controller="Account" method="post">
+
+            <div class="input-group">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="form-control" placeholder="Enter your first name" />
+                @* <span asp-validation-for="FirstName" class="text-danger"></span> *@
+            </div>
+
+            <div class="input-group">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" class="form-control" placeholder="Enter your last name" />
+                @* <span asp-validation-for="LastName" class="text-danger"></span> *@
+            </div>
+
+            <div class="input-group">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control" placeholder="Choose a username" />
+                @* <span asp-validation-for="UserName" class="text-danger"></span> *@
+            </div>
+
+            <div class="input-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+                @* <span asp-validation-for="Email" class="text-danger"></span> *@
+            </div>
+
+            <div class="input-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" placeholder="Create a password" />
+                @* <span asp-validation-for="Password" class="text-danger"></span> *@
+            </div>
+
+            <div class="input-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm your password" />
+                @* <span asp-validation-for="ConfirmPassword" class="text-danger"></span> *@
+            </div>
+
+            <button type="submit" class="btn">Sign Up</button>
+
+            <div class="links">
+                <p>
+                    Already have an account?
+                    <a asp-action="Login" asp-controller="Account">Login</a>
+                </p>
+            </div>
+
+            <button type="button" class="theme-toggle" id="themeButton">🌙</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model List<City>
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "_Layout";
+}
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="cities">
+
+            @foreach (var item in Model)
+            {
+                <a asp-action="GetAll"
+                   asp-controller="Destination"
+                   asp-route-cityId="@item.CityId"
+                   class="btn view-details"
+                   style="text-decoration:none;"
+                >
+                    <div class="city-card">
+                        <img src="@Url.Content(item.Image)" />
+                        <h3>@item.CityName</h3>
+
+                    </div>
+                </a>
+            }
+
+        </div>
+
+        <ul class="pagination">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item">
+                    <a class="page-link  @(i == ViewBag.Page ? "active" : "")" href="/Home/Index?page=@i">@i</a>
+                </li>
+            }
+        </ul>
+
+    </div>
+</section>

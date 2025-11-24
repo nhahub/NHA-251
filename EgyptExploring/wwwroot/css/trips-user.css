@@ -1,0 +1,342 @@
+﻿.trips-hero {
+    padding-top: 150px; 
+    padding-bottom: 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.trips-hero-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px;
+}
+
+.trips-hero-content p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+
+.trips-filters {
+    background: #fff;
+    padding: 10px 60px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .filter-group label {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #777;
+    }
+
+    .filter-group input,
+    .filter-group select {
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 0.95rem;
+        min-width: 180px;
+        outline: none;
+        transition: 0.2s;
+        background: #fafafa;
+    }
+
+        .filter-group input:focus,
+        .filter-group select:focus {
+            border-color: #00bfff;
+            box-shadow: 0 0 0 3px rgba(0,191,255,0.25);
+            background: #fff;
+        }
+
+.trips-table-wrapper {
+    padding: 0 60px 60px;
+    background: #f7f7f7;
+}
+
+.no-trips {
+    text-align: center;
+    color: #777;
+    padding: 40px 0;
+}
+
+
+.trips-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; 
+}
+
+    .trips-table th,
+    .trips-table td {
+        border: none;
+    }
+
+    .trips-table thead th {
+        text-align: left;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #777;
+        padding: 0 16px 6px;
+    }
+
+    
+    .trips-table tbody tr {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .trips-table tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+        }
+
+    .trips-table tbody td {
+        padding: 14px 16px;
+        font-size: 0.96rem;
+        color: #333;
+    }
+
+        .trips-table tbody td:first-child {
+            font-weight: 600;
+            color: #111;
+        }
+
+
+.trip-row-actions {
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+.btn-table {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+    .btn-table.primary {
+        background: #00bfff;
+        color: #111;
+    }
+
+        .btn-table.primary:hover {
+            background: #009acd;
+        }
+
+
+.trip-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 10px;
+    z-index: 10000;
+    overflow-y: auto;
+}
+
+    .trip-modal.active {
+        display: flex;
+    }
+
+.trip-modal-content {
+    background: #fff;
+    color: #111;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 18px;
+    padding: 24px 24px 20px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    position: relative;
+    outline: none;
+}
+
+.trip-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.trip-modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    color: #00bfff;
+}
+
+.trip-modal-city {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 14px;
+}
+
+.trip-modal-desc {
+    font-size: 0.98rem;
+    color: #444;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.trip-modal-price {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+    .trip-modal-price .label {
+        color: #555;
+    }
+
+
+.trip-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: #00bfff;
+    color: #111;
+}
+
+    .btn-primary:hover {
+        background: #009acd;
+    }
+
+.btn-secondary {
+    background: #eee;
+    color: #333;
+}
+
+    .btn-secondary:hover {
+        background: #ddd;
+    }
+
+
+@media (max-width: 900px) {
+    .trips-hero {
+        padding-top: 130px;
+        padding-bottom: 16px;
+    }
+
+    .trips-filters {
+        padding: 10px 20px 20px;
+    }
+
+    .trips-table-wrapper {
+        padding: 0 20px 40px;
+    }
+
+    .trips-table {
+        font-size: 0.9rem;
+    }
+}
+
+
+body.dark-mode .trips-hero {
+    background: #1a1a1a;
+}
+
+body.dark-mode .trips-hero-content h1 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .trips-hero-content p {
+    color: #ccc;
+}
+
+body.dark-mode .trips-filters {
+    background: #1a1a1a;
+}
+
+body.dark-mode .filter-group label {
+    color: #ccc;
+}
+
+body.dark-mode .filter-group input,
+body.dark-mode .filter-group select {
+    background: #222;
+    border-color: #444;
+    color: #eee;
+}
+
+    body.dark-mode .filter-group input:focus,
+    body.dark-mode .filter-group select:focus {
+        border-color: #00bfff;
+        box-shadow: 0 0 0 3px rgba(0,191,255,0.35);
+    }
+
+body.dark-mode .trips-table-wrapper {
+    background: #111;
+}
+
+body.dark-mode .trips-table tbody tr {
+    background: #1a1a1a;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.7);
+}
+
+body.dark-mode .trips-table td {
+    color: #e0e0e0;
+}
+
+body.dark-mode .trips-table th {
+    color: #b5b5b5;
+}
+
+body.dark-mode .trip-modal-content {
+    background: #1a1a1a;
+    color: #eee;
+}
+
+body.dark-mode .trip-modal-desc {
+    color: #ddd;
+}
+
+body.dark-mode .trip-modal-price .label {
+    color: #ccc;
+}
+
+body.dark-mode .btn-secondary {
+    background: #333;
+    color: #eee;
+}
+
+    body.dark-mode .btn-secondary:hover {
+        background: #444;
+    }

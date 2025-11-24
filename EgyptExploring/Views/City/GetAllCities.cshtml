@@ -1,0 +1,41 @@
+﻿@model List<City>
+
+@{
+    ViewData["Title"] = "Cities";
+    Layout = "_Layout";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/destinations.css" asp-append-version="true" />
+    <script src="~/js/City.js" asp-append-version="true"></script>
+}
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Explore Top Cities</h1>
+        <p>Discover the most beautiful cities across Egypt</p>
+    </div>
+</section>
+
+<section class="destinations">
+    <div class="city-search-container">
+        <input type="text" id="citySearch" placeholder="Search for a city..." />
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="destination-card" style="background-image:url('@Url.Content(item.Image)')">
+            <div class="overlay"></div>
+            <div class="info">
+                <h3>@item.CityName</h3>
+
+                <a asp-action="GetAll"
+                   asp-controller="Destination"
+                   asp-route-cityId="@item.CityId"
+                   class="btn view-details">
+                    View Destinations
+                </a>
+            </div>
+        </div>
+    }
+</section>

@@ -1,0 +1,150 @@
+:root {
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #00aaff;
+    --accent-hover: #0088cc;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0f0f0f;
+    --card-bg: #1c1c1c;
+    --text-color: #f2f2f2;
+    --accent-color: #4f9dff;
+    --accent-hover: #3a7add;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+.login-container {
+    background: var(--card-bg);
+    padding: 45px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 380px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+    .login-container img {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .login-container h2 {
+        margin-bottom: 25px;
+        color: var(--accent-color);
+        font-weight: 600;
+    }
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+    .input-group label {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        background: transparent;
+        color: var(--text-color);
+        outline: none;
+        transition: 0.2s;
+    }
+
+        .input-group input:focus {
+            border-color: var(--accent-color);
+        }
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btn:hover {
+        background: var(--accent-hover);
+    }
+
+.links {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+    .links a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+.toggle-theme {
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+
+@media (max-width: 450px) {
+    .login-container {
+        width: 90%;
+        padding: 35px 25px;
+    }
+}
+
+.dark-mode {
+    --bg-color: #0f0f0f;
+    --card-bg: #1c1c1c;
+    --text-color: #f2f2f2;
+    --accent-color: #4f9dff;
+    --accent-hover: #3a7add;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin-left: auto;
+    color: var(--accent-color);
+    transition: 0.3s;
+}
+
+    .theme-toggle:hover {
+        transform: scale(1.1);
+    }

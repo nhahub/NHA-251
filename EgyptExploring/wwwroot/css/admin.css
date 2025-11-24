@@ -1,0 +1,172 @@
+﻿.admin-header {
+    padding: 150px 60px 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    background: #fff;
+}
+
+.admin-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.admin-header p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+
+.btn-add {
+    background: #00bfff;
+    color: #111;
+    padding: 10px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,191,255,0.35);
+    transition: all 0.25s ease;
+}
+
+.btn-add:hover {
+    background: #009acd;
+    box-shadow: 0 6px 16px rgba(0,191,255,0.45);
+}
+
+.admin-table-wrapper {
+    padding: 0 60px 60px;
+    background: #f7f7f7;
+}
+
+
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+}
+
+
+.admin-table th,
+.admin-table td {
+    border: none;
+}
+
+
+.admin-table thead th {
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #777;
+    padding: 0 16px 6px;
+}
+
+.admin-table tbody tr {
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.admin-table tbody tr:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+}
+
+
+.admin-table tbody td {
+    padding: 14px 16px;
+    font-size: 0.96rem;
+    color: #333;
+}
+
+
+.admin-table tbody td:first-child {
+    font-weight: 600;
+    color: #111;
+}
+
+
+.admin-table tbody tr td:first-child {
+    border-radius: 12px 0 0 12px;
+}
+.admin-table tbody tr td:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+
+.row-actions {
+    text-align: right;
+    white-space: nowrap;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn.primary {
+    background: #00bfff;
+    color: #111;
+}
+
+.btn.primary:hover {
+    background: #009acd;
+}
+
+.btn.secondary {
+    background: #eee;
+    color: #333;
+}
+
+.btn.secondary:hover {
+    background: #ddd;
+}
+
+body.dark-mode .admin-header {
+    background: #1a1a1a;
+}
+
+body.dark-mode .admin-header h1 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .admin-header p {
+    color: #aaa;
+}
+
+body.dark-mode .admin-table-wrapper {
+    background: #111;
+}
+
+body.dark-mode .admin-table tbody tr {
+    background: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .admin-table tbody td {
+    color: #e0e0e0;
+}
+
+body.dark-mode .admin-table tbody td:first-child {
+    color: #ffffff;
+}
+
+body.dark-mode .btn.secondary {
+    background: #333;
+    color: #eee;
+}
+
+body.dark-mode .btn.secondary:hover {
+    background: #444;
+}

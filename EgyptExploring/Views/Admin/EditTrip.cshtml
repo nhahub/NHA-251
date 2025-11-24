@@ -1,0 +1,60 @@
+﻿@model EgyptExploring.Models.Trip
+
+@{
+    ViewData["Title"] = "Edit Trip";
+    Layout = "_Layout";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/admin-addtrip.css" asp-append-version="true" />
+}
+
+<section class="admin-addtrip-header">
+    <h1>Edit Trip</h1>
+    <p>Update the trip details below.</p>
+</section>
+
+<section class="admin-addtrip-wrapper">
+    <div class="admin-addtrip-card">
+
+        <form asp-action="EditTrip" asp-controller="Admin" class="admin-addtrip-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="TripId" />
+
+            <div class="admin-form-group">
+                <label asp-for="TripName"></label>
+                <input asp-for="TripName" class="admin-input" />
+                <span asp-validation-for="TripName" class="text-danger"></span>
+            </div>
+
+            <div class="admin-form-group">
+                <label asp-for="TripDescription"></label>
+                <textarea asp-for="TripDescription" class="admin-input admin-textarea"></textarea>
+                <span asp-validation-for="TripDescription" class="text-danger"></span>
+            </div>
+
+            <div class="admin-form-group">
+                <label asp-for="TripPrice"></label>
+                <input asp-for="TripPrice" class="admin-input" />
+                <span asp-validation-for="TripPrice" class="text-danger"></span>
+            </div>
+
+            <div class="admin-form-group">
+                <label asp-for="CityId">City</label>
+                <select asp-for="CityId"
+                        asp-items="ViewBag.Cities"
+                        class="admin-input">
+                    <option value="">-- Select City --</option>
+                </select>
+                <span asp-validation-for="CityId" class="text-danger"></span>
+            </div>
+
+            <div class="admin-actions">
+                <button type="submit" href="GetAllTrips" class="btn-primary-admin">Save Changes</button>
+                <a asp-controller="Admin" asp-action="GetAllTrips" class="btn-secondary-admin">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+</section>

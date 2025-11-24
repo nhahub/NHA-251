@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-color, #ffffff);
+    color: var(--text-color, #111);
+    transition: background 0.3s, color 0.3s;
+}
+
+
+.signup-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("/Images/egyptian-hieroglyphs-wall.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+    .signup-container::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 0;
+    }
+
+    .signup-container img {
+        width: 120px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .signup-container h2 {
+        color: #00bfff;
+        font-size: 28px;
+        margin-bottom: 20px;
+        z-index: 2;
+    }
+
+
+form {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 35px 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+    .input-group label {
+        font-weight: 600;
+        color: #222;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: border 0.3s;
+    }
+
+        .input-group input:focus {
+            border-color: #00bfff;
+        }
+
+.btn {
+    width: 100%;
+    background: #00bfff;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+    .btn:hover {
+        background: #0095cc;
+        box-shadow: 0 0 10px #00bfff;
+    }
+
+.links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+    .links a {
+        color: #00bfff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+
+body[data-theme="dark"] {
+    --bg-color: #0f0f0f;
+    --text-color: #f2f2f2;
+}
+
+    body[data-theme="dark"] form {
+        background: rgba(20, 20, 20, 0.9);
+        color: #ddd;
+    }
+
+    body[data-theme="dark"] input {
+        background: #2a2a2a;
+        color: #fff;
+        border-color: #444;
+    }
+
+
+.toggle-theme {
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #00bfff;
+    user-select: none;
+}

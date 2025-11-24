@@ -1,0 +1,26 @@
+﻿
+footer {
+    background: #0d1b2a; 
+    color: #e0e0e0;
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
+}
+
+    footer a {
+        color: #00bfff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+body.dark-mode footer {
+    background: #0a1623;
+    color: #dcdcdc;
+}

@@ -1,0 +1,49 @@
+﻿@model List<Booking>
+
+@{
+    ViewData["Title"] = "My Bookings";
+    Layout = "_Layout";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/MyBookings.css" asp-append-version="true" />
+}
+
+<section class="mybookings-header">
+    <div>
+        <h1>My Bookings</h1>
+        <p>Here you can see all your booked trips and details.</p>
+    </div>
+</section>
+
+<section class="mybookings-table-wrapper">
+    @if (Model == null || !Model.Any())
+    {
+        <p class="no-bookings">You have no bookings yet.</p>
+    }
+    else
+    {
+        <table class="mybookings-table">
+            <thead>
+                <tr>
+                    <th>Trip Title</th>
+                    <th>Date of Booking</th>
+                    <th>Number of Persons</th>
+                    <th>Total Price (EGP)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Trip?.TripName</td>
+                        <td>@item.Date.ToString("dd/MM/yyyy")</td>
+                        <td>@item.NumberOfPersons</td>
+                        <td>@item.TotalPrice.ToString("0.00")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</section>

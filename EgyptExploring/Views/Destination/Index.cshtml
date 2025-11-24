@@ -1,0 +1,86 @@
+﻿@model List<Destination>
+
+@{
+    ViewData["Title"] = "DestinationsDetails";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/destinations.css" asp-append-version="true" />
+    
+}
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Explore Top Destinations</h1>
+        <p>Discover the most beautiful tourist spots across Egypt</p>
+    </div>
+</section>
+
+@if (ViewBag.CityName != null)
+{
+    <section class="city-title">
+        <h1>@ViewBag.CityName</h1>
+    </section>
+}
+
+<section class="destinations">
+
+
+    <div class="city-search-container">
+        <input type="text" id="citySearch" placeholder="Search for a city..." />
+    </div>
+
+
+    @foreach (var item in Model)
+    {
+        <div class="destination-card" style="background-image:url('@Url.Content(item.ImageUrl)')">
+            <div class="overlay"></div>
+            <div class="info">
+                <h3>@item.DestinationName</h3>
+                <p>@item.Description</p>
+
+                
+                    <a asp-action="DestinationDetails"
+                    asp-controller="Destination"
+                   asp-route-id="@item.DestinationId"
+                   class="btn view-details"
+                   data-title="@item.DestinationName"
+                   data-desc="@item.Description"
+                   data-img='@Url.Content(item.ImageUrl)'>
+                    View Details
+                </a>
+            </div>
+        </div>
+    }
+</section>
+
+<div class="destination-modal" id="destinationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" hidden>
+    <div class="modal-content" tabindex="-1">
+        <button class="close-modal" type="button" aria-label="Close">×</button>
+
+        <img id="modalImage" alt="Destination image" />
+        <h2 id="modalTitle">Title</h2>
+        <p id="modalDesc">Description</p>
+
+        <div class="modal-buttons">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="Trip" asp-action="GetAll" class="btn book-btn">
+                    View Trips
+                </a>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login" class="btn book-btn">
+                    View Trips
+                </a>
+            }
+            <button class="btn close-btn" type="button">Cancel</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/City.js" asp-append-version="true"></script>
+    <script src="~/js/dest.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,154 @@
+﻿
+.admin-addtrip-header {
+    padding: 110px 60px 20px;
+    background: #fff;
+}
+
+    .admin-addtrip-header h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #111;
+    }
+
+    .admin-addtrip-header p {
+        color: #666;
+        font-size: 0.95rem;
+    }
+
+
+.admin-addtrip-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 60px;
+    background: #f7f7f7;
+}
+
+.admin-addtrip-card {
+    background: #fff;
+    width: 100%;
+    max-width: 650px;
+    padding: 30px 30px 25px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-top: 4px solid #00bfff;
+}
+
+
+
+.admin-addtrip-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.admin-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+    .admin-form-group label {
+        font-weight: 600;
+        color: #333;
+    }
+
+.admin-input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    background: #fafafa;
+    transition: 0.25s;
+}
+
+    .admin-input:focus {
+        border-color: #00bfff;
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(0,191,255,0.25);
+    }
+
+.admin-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+
+
+.admin-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.btn-primary-admin,
+.btn-secondary-admin {
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-primary-admin {
+    background: #00bfff;
+    color: #111;
+    box-shadow: 0 4px 10px rgba(0,191,255,0.3);
+}
+
+    .btn-primary-admin:hover {
+        background: #009acd;
+    }
+
+.btn-secondary-admin {
+    background: #eee;
+    color: #333;
+}
+
+    .btn-secondary-admin:hover {
+        background: #ddd;
+    }
+
+
+body.dark-mode .admin-addtrip-header {
+    background: #1a1a1a;
+}
+
+    body.dark-mode .admin-addtrip-header h1 {
+        color: #fff;
+    }
+
+    body.dark-mode .admin-addtrip-header p {
+        color: #ccc;
+    }
+
+body.dark-mode .admin-addtrip-wrapper {
+    background: #111;
+}
+
+body.dark-mode .admin-addtrip-card {
+    background: #1a1a1a;
+    border-top-color: #00bfff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .admin-form-group label {
+    color: #eee;
+}
+
+body.dark-mode .admin-input {
+    background: #222;
+    border-color: #444;
+    color: #eee;
+}
+
+    body.dark-mode .admin-input:focus {
+        border-color: #00bfff;
+        box-shadow: 0 0 0 3px rgba(0,191,255,0.3);
+    }
+
+body.dark-mode .btn-secondary-admin {
+    background: #333;
+    color: #eee;
+}

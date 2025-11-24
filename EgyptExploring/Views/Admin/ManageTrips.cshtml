@@ -1,0 +1,61 @@
+﻿@model List<EgyptExploring.Models.Trip>
+
+@{
+    ViewData["Title"] = "Manage Trips";
+    Layout = "_Layout";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+}
+
+<section class="admin-header">
+    <div>
+        <h1>Manage Trips</h1>
+        <p>View, edit, or add new trips.</p>
+    </div>
+
+    <a asp-controller="Trip" asp-action="AddTrip" class="btn-add">
+        + Add New Trip
+    </a>
+</section>
+
+<section class="admin-table-wrapper">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var trip in Model)
+            {
+                <tr>
+                    <td>@trip.TripName</td>
+                    <td>@trip.City?.CityName</td>
+                    <td>@trip.TripPrice EGP</td>
+
+                    <td class="row-actions">
+
+                        <a asp-controller="Trip"
+                           asp-action="TripDetails"
+                           asp-route-id="@trip.TripId"
+                           class="btn secondary">
+                            Details
+                        </a>
+
+                        <a asp-controller="Trip"
+                           asp-action="Edit"
+                           asp-route-id="@trip.TripId"
+                           class="btn primary">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

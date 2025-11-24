@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #e3f2fd, #ffffff);
+    --card-bg: #ffffff;
+    --text-color: #222;
+    --accent-color: #0077ff;
+    --accent-hover: #005fcc;
+}
+
+body.dark-mode {
+    --bg-gradient: linear-gradient(135deg, #0a0f1a, #1b263b);
+    --card-bg: #1f1f1f;
+    --text-color: #f1f1f1;
+    --accent-color: #3399ff;
+    --accent-hover: #4db8ff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    transition: background 0.4s ease, color 0.3s ease;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.auth-box {
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .auth-box {
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    background: transparent;
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+    input:focus {
+        border-color: var(--accent-color);
+        box-shadow: 0 0 8px rgba(0, 119, 255, 0.3);
+    }
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: var(--accent-color);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btn:hover {
+        background: var(--accent-hover);
+        transform: translateY(-2px);
+    }
+
+.links {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+    .links a {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+.theme-toggle {
+    margin-top: 20px;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+    .theme-toggle:hover {
+        background: var(--accent-hover);
+        transform: scale(1.05);
+    }
+
+    .text-danger{
+        color:red;
+    }

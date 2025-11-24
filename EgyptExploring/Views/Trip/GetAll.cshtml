@@ -1,0 +1,109 @@
+﻿@model List<EgyptExploring.Models.Trip>
+
+@{
+    ViewData["Title"] = "Trips";
+    Layout = "_Layout";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/trips-user.css" asp-append-version="true" />
+    <script defer src="~/js/trips.js" asp-append-version="true"></script>
+}
+
+<section class="trips-hero">
+    <div class="trips-hero-content">
+        <h1>Available Trips</h1>
+        <p>Browse all trips and choose the best option for you.</p>
+    </div>
+</section>
+
+<section class="trips-filters">
+
+    <div class="filter-group">
+        <label for="tripSearch">Search</label>
+        <input type="text" id="tripSearch" placeholder="Search by trip name..." />
+    </div>
+
+    <div class="filter-group">
+        <label for="minPrice">Min Price</label>
+        <input type="number" id="minPrice" placeholder="e.g. 500" min="0" />
+    </div>
+
+    <div class="filter-group">
+        <label for="maxPrice">Max Price</label>
+        <input type="number" id="maxPrice" placeholder="e.g. 3000" min="0" />
+    </div>
+
+</section>
+
+<section class="trips-table-wrapper">
+
+    @if (Model == null || !Model.Any())
+    {
+        <p class="no-trips">No trips available at the moment.</p>
+    }
+    else
+    {
+        <table class="trips-table">
+            <thead>
+                <tr>
+                    <th>Trip</th>
+                    <th>City</th>
+                    <th>Price For One Person (EGP)</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var trip in Model)
+                {
+                    <tr data-name="@trip.TripName"
+                        data-price="@trip.TripPrice">
+
+                        <td>@trip.TripName</td>
+                        <td>@trip.City?.CityName</td>
+                        <td>@trip.TripPrice.ToString("0.00")</td>
+
+                        <td class="trip-row-actions">
+                            @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+                            {
+                                <button type="button"
+                                class="btn-table primary view-trip-details"
+                                    data-title="@trip.TripName"
+                                    data-city="@trip.City?.CityName"
+                                    data-desc="@trip.TripDescription"
+                                    data-price="@trip.TripPrice.ToString("0.00")"
+                                    data-book-url="@Url.Action("MakeBooking", "Booking", new { id = trip.TripId })">
+                                View Details
+                            </button>
+                            }
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+</section>
+
+<div class="trip-modal" id="tripModal" hidden>
+    <div class="trip-modal-content" tabindex="-1">
+        <button class="trip-modal-close" type="button" aria-label="Close">×</button>
+
+        <h2 id="tripModalTitle">Trip Title</h2>
+        <p class="trip-modal-city" id="tripModalCity"></p>
+
+        <p class="trip-modal-desc" id="tripModalDesc"></p>
+
+        <p class="trip-modal-price">
+            <span class="label">Price: </span>
+            <span id="tripModalPrice"></span> EGP
+        </p>
+
+        <div class="trip-modal-actions">
+            <button class="btn-secondary" type="button" id="tripModalBack">Close</button>
+            <a href="#" class="btn-primary" id="tripModalBook">Book Now</a>
+        </div>
+    </div>
+</div>

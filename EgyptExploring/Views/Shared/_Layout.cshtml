@@ -1,0 +1,98 @@
+﻿@{
+    Layout = null;
+}
+@using EgyptExploring.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="~/images/image.png" />
+
+    <title>@ViewData["Title"] - Triplico</title>
+
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
+
+
+    @RenderSection("Head", required: false)
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a asp-controller="Home" asp-action="Index">
+                <img src="~/images/image.png" alt="Triplico Logo" />
+            </a>
+        </div>
+
+        <div class="nav-row">
+
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a>☰ Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="City" asp-action="GetAll">Cities</a></li>
+
+                        @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin")) 
+                        {
+                            <li><a asp-controller="Trip" asp-action="GetAll">Trips</a></li>
+                            <li><a asp-controller="Booking" asp-action="MyBooking">MyBookings</a></li>
+                        }
+
+                        <li><a asp-controller="Home" asp-action="AboutUs">About Us</a></li>
+                    </ul>
+                </li>
+
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="dropdown">
+                        <a>Admin</a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-controller="Admin" asp-action="GetAllUsers">Users</a></li>
+                            <li><a asp-controller="Admin" asp-action="GetAllTrips">Trips</a></li>
+                        </ul>
+                    </li>
+                }
+            </ul>
+
+
+            <ul class="nav-sign">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>
+                        <form asp-controller="Account" asp-action="Logout" method="post">
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                     <li class="Welcome-User">Welcome @User.FindFirst("FirstName").Value</li> 
+                }
+                else
+                {
+                    <li><a asp-controller="Account" asp-action="Login">Log In</a></li>
+                    <li><a asp-controller="Account" asp-action="Register">Sign Up</a></li>
+                }
+            </ul>
+        </div>
+
+        @RenderSection("NavbarExtras", required: false)
+    </nav>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <p>© @DateTime.UtcNow.Year Triplico. All rights reserved.</p>
+    </footer>
+
+    <script src="~/js/script.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

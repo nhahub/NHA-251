@@ -1,0 +1,121 @@
+﻿.mybookings-header {
+    padding-top: 150px; 
+    padding-bottom: 20px;
+    padding-inline: 60px;
+    background: #fff;
+}
+
+    .mybookings-header h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 6px;
+    }
+
+    .mybookings-header p {
+        color: #666;
+        font-size: 0.95rem;
+    }
+
+
+.mybookings-table-wrapper {
+    padding: 0 60px 60px;
+    background: #f7f7f7;
+}
+
+.no-bookings {
+    text-align: center;
+    color: #777;
+    padding: 40px 0;
+}
+
+
+.mybookings-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; 
+}
+
+    .mybookings-table th,
+    .mybookings-table td {
+        border: none;
+    }
+
+    .mybookings-table thead th {
+        text-align: left;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #777;
+        padding: 0 16px 6px;
+    }
+
+    
+    .mybookings-table tbody tr {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .mybookings-table tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+        }
+
+    .mybookings-table tbody td {
+        padding: 14px 16px;
+        font-size: 0.96rem;
+        color: #333;
+    }
+
+        .mybookings-table tbody td:first-child {
+            font-weight: 600;
+            color: #111;
+        }
+
+
+@media (max-width: 900px) {
+    .mybookings-header {
+        padding-top: 130px;
+        padding-inline: 20px;
+    }
+
+    .mybookings-table-wrapper {
+        padding: 0 20px 40px;
+    }
+
+    .mybookings-table {
+        font-size: 0.9rem;
+    }
+}
+
+
+body.dark-mode .mybookings-header {
+    background: #1a1a1a;
+}
+
+    body.dark-mode .mybookings-header h1 {
+        color: #f5f5f5;
+    }
+
+    body.dark-mode .mybookings-header p {
+        color: #ccc;
+    }
+
+body.dark-mode .mybookings-table-wrapper {
+    background: #111;
+}
+
+body.dark-mode .mybookings-table tbody tr {
+    background: #1a1a1a;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.7);
+}
+
+body.dark-mode .mybookings-table td {
+    color: #e0e0e0;
+}
+
+body.dark-mode .mybookings-table th {
+    color: #b5b5b5;
+}

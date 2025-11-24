@@ -1,0 +1,61 @@
+﻿@model List<EgyptExploring.Models.Trip>
+
+@{
+    ViewData["Title"] = "Manage Trips";
+    Layout = "_Layout";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+}
+
+<section class="admin-header">
+    <div>
+        <h1>Manage Trips</h1>
+        <p>View, edit, delete, or add new trips.</p>
+    </div>
+
+    <a asp-action="AddTrip" asp-controller="Admin" class="btn-add">
+        + Add New Trip
+    </a>
+</section>
+
+<section class="admin-table-wrapper">
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Price (EGP)</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var trip in Model)
+            {
+                <tr>
+                    <td>@trip.TripName</td>
+                    <td>@trip.City?.CityName</td>
+                    <td>@trip.TripPrice</td>
+
+                    <td class="row-actions">
+                        <a asp-action="EditTrip"
+                           asp-controller="Admin"
+                           asp-route-id="@trip.TripId"
+                           class="btn primary">
+                            Edit
+                        </a>
+
+                        <a asp-action="DeleteTrip"
+                           asp-controller="Admin"
+                           asp-route-id="@trip.TripId"
+                           class="btn secondary"
+                           onclick="return confirm('Are you sure you want to delete this trip?');">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
