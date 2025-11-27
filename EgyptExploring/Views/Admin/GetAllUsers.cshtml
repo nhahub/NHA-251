@@ -7,6 +7,8 @@
 
 @section Head {
     <link rel="stylesheet" href="~/css/admin-users.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+
 }
 
 
@@ -43,11 +45,11 @@
                     <td>@item.Email</td>
                     @if (item.LockoutEnd == null)
                     {
-                        <td><a asp-controller="Admin" asp-action="LockUser" asp-route-Id="@item.Id">Lock</a></td>
+                        <td><a asp-controller="Admin" asp-action="LockUser" asp-route-Id="@item.Id" class="Lock">Lock </a></td>
                     }
                     @if (item.LockoutEnd != null)
                     {
-                        <td><a asp-controller="Admin" asp-action="UnLockUser" asp-route-Id="@item.Id">UnLock</a></td>
+                        <td><a asp-controller="Admin" asp-action="UnLockUser" asp-route-Id="@item.Id" class="unlock">UnLock</a></td>
                     }
 
                 </tr>

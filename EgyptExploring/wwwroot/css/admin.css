@@ -170,3 +170,40 @@ body.dark-mode .btn.secondary {
 body.dark-mode .btn.secondary:hover {
     background: #444;
 }
+
+
+.Lock {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: all 0.2s ease;
+    background: #fd0808;
+    color: #111;
+}
+
+    .Lock:hover {
+        background-color: #ac2f2f
+    }
+
+.unlock {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: all 0.2s ease;
+    background: #00bfff;
+    color: #111;
+}
+
+    .unlock:hover {
+        background: #009acd;
+    }
+
+

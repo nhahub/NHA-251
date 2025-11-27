@@ -6,6 +6,7 @@ namespace EgyptExploring.RepositryInterfaces
     {
         public void Create( AppUser User);
         public List<AppUser> Read();
+        public List<AppUser> ReadAll();
         public void Update(AppUser User);
         public void Delete(int id);
         public AppUser GetOne(int id);

@@ -85,7 +85,7 @@ namespace EgyptExploring.Controllers
 
                 IdentityResult result= await _userManager.CreateAsync(appUser , registerViewModel.Password);
                 if (result.Succeeded) {
-                    List < AppUser > users= _appUserRepository.Read().ToList();
+                    List < AppUser > users= _appUserRepository.ReadAll().ToList();
                     if (users.Count == 1)
                     {
                         IdentityRole<int> identityRole = new IdentityRole<int>();

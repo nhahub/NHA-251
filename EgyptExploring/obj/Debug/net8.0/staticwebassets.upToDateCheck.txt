@@ -5,9 +5,9 @@ wwwroot\css\admin.css
 wwwroot\css\authstyle.css
 wwwroot\css\booking.css
 wwwroot\css\destinations.css
-wwwroot\css\footer.css
 wwwroot\css\loginstyle.css
 wwwroot\css\MyBookings.css
+wwwroot\css\navbar.css
 wwwroot\css\signupstyle.css
 wwwroot\css\style.css
 wwwroot\css\trip-details.css
@@ -170,4 +170,4 @@ wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\Videos\egypt-travel.mp4
-wwwroot\css\navbar.css
+wwwroot\css\footer.css

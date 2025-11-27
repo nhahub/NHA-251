@@ -24,7 +24,15 @@ namespace EgyptExploring.Repositories
 
         public List<AppUser> Read()
         {
-            return Context.Users.ToList();
+            return Context.Users
+    .Where(u => !Context.UserRoles
+        .Any(ur => ur.UserId == u.Id && ur.RoleId == 1))
+    .ToList(); 
+        }
+
+        public List<AppUser> ReadAll()
+        {
+          return  Context.Users.ToList();
         }
 
         public void Update(AppUser user)

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EgyptExploring")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9584b442cf92e3ed800657822766680b91f8163")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c212b9a8c44f7ff900efd59eaa53389e86e4234")]
 [assembly: System.Reflection.AssemblyProductAttribute("EgyptExploring")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EgyptExploring")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
