@@ -22,6 +22,8 @@ namespace EgyptExploring.ViewModel
         [Compare("Password",ErrorMessage ="Please Enter The Same Password As Above")]
         public string ConfirmPassword { get; set; }
         [EmailAddress]
+
+
         public string Email {  get; set; }
     }
 }

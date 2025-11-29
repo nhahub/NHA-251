@@ -2,12 +2,13 @@ wwwroot\css\about.css
 wwwroot\css\admin-addtrip.css
 wwwroot\css\admin-users.css
 wwwroot\css\admin.css
-wwwroot\css\authstyle.css
+wwwroot\css\navbar.css
 wwwroot\css\booking.css
 wwwroot\css\destinations.css
+wwwroot\css\footer.css
 wwwroot\css\loginstyle.css
 wwwroot\css\MyBookings.css
-wwwroot\css\navbar.css
+wwwroot\css\authstyle.css
 wwwroot\css\signupstyle.css
 wwwroot\css\style.css
 wwwroot\css\trip-details.css
@@ -170,4 +171,3 @@ wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
 wwwroot\Videos\egypt-travel.mp4
-wwwroot\css\footer.css
